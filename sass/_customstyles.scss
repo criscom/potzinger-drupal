@@ -1,0 +1,1264 @@
+/**
+ * @file
+ *
+ * potzinger.at subtheme
+ * base theme: ZEN 5.5
+ * development server @localhost; 
+ * path: htdocs/master
+ *
+ * CUSTOM STYLES scss template
+ *
+ * author: criscom
+ * date: 20140506 / 06 May 2014
+ * l
+ *
+**/ 
+
+.pageloader {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background: #ffffff url('../images/page-loader.gif') no-repeat 50% 50%;
+}
+
+
+body
+{
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+  background-image: url('../images/bg_body_fade.jpg');
+  background-color: #ebebeb;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  color: #262626;
+}
+
+#backtotop {
+  @include MQ(M) {
+    display: none!important;
+  }
+}
+
+#header
+{
+  position: relative;
+  .header__logo {
+    @include MQ(M) {
+      margin-bottom: 16px;
+      margin-bottom: 1rem;
+      display: block;
+      width: 100%;
+    }
+    img {
+      margin-top: 12px;
+      margin-top: .75rem;
+      @include MQ(M) {
+        display: block;
+        margin-right: auto;
+        margin-left: auto;
+      }
+    }
+  }
+}
+
+.header__region {
+  clear: none !important;
+}
+
+a:link, a:visited, a:active
+
+{
+  color: #707173;
+}
+
+a:hover {
+  color: #83b817;
+}
+
+h1#page-title, // Kontakt Seite
+h2.block__title,
+h2.page__title,
+h2.views__title {
+  color: $color2;
+}
+
+.page-node-430 h2.page__title {
+  padding-bottom: 26px;
+  padding-bottom: 1.625rem;
+}
+
+h2.views__title {
+  margin-top: 0;
+}
+
+// Title in green color under Slider on frontpage
+.front h2.views__title {
+  @include MQ(S) {
+    @include adjust-font-size-to(20px);
+    text-align: center;
+    }
+}
+
+h1#page-title { // Kontakt
+  @include adjust-font-size-to(24px);
+}
+
+.front h2.page__title {
+  text-align: center;
+}
+/* @group Banner */
+
+body.not-front .region-highlighted
+{
+  height: 142px;
+  height: 100%;
+  @include MQ(S) {
+    display: none;
+    }
+}
+
+
+.region-highlighted div.block p {
+  // margin: 0px 15px;
+}
+
+#block-block-12 {
+  @include MQ(S) {
+    // display: none;
+    }
+  img {
+  }
+}
+
+div.download-file {
+  a {
+    margin-left: 8px;
+    margin-left: 0.5rem;
+    font-size: 14px;
+  }
+}
+
+/* @end Banner */
+
+
+
+#main {
+  padding-top: 6em!important;
+  // border-bottom: 1px solid #b1b3b4; /* originall this was applied #footer but border wouldn't show 20130825 */  
+  @include MQ(M) {
+    padding-top: 3em!important;
+    border-bottom: none;
+  }
+}
+
+/* @group Subnavigation / Submenüs Sidebar */
+
+.sidebar .block-menu-block ul
+{
+  padding: 0px 0px 0px 0px!important;
+  margin-top: 0 !important;
+}
+
+.sidebar .block-menu-block ul li 
+{
+  list-style-type: none!important;
+  list-style-image: none!important;
+  text-transform: uppercase;
+  padding: 5px 0px 5px 10px;
+  border-bottom: 1px solid #b1b3b4;
+}
+
+.sidebar .block-menu-block ul li a
+{
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif!important;
+  font-size: 0.75em;
+  display: block;
+  text-decoration: none;
+
+    
+}
+
+.sidebar .block-menu-block ul li.active-trail a.active
+{
+  color: #83b817; /*green, grün */
+
+}
+
+/* 2. Hierarchie Bezugsquellen > Bundesland */
+
+.sidebar .block-menu-block ul li ul li a
+{
+  text-transform: none;
+}
+
+.sidebar .block-menu-block ul li ul li.last
+{
+  border-bottom: none;
+}
+
+/* Menü Link GASTRONOMIE in Großbuchstaben CR 05.01.2013 criscom */
+
+.sidebar .block-menu-block ul li ul > li.gastronomie > a
+{
+  text-transform: uppercase!important;
+}
+
+/* @end Subnavigation / Submenüs Sidebar */
+
+
+/* @group startseite */
+
+
+/* News in Header */
+
+.region-newsticker
+{
+  height: 118px;
+}
+
+#block-views-aktuelles-block-1
+{
+  // margin-top: 12px;
+  // margin-left: 640px;
+  // margin-bottom: 0px !important;
+  // font-size: 0.75em;
+  // width: 200px;
+  // height: 82px;
+  float: right;
+  font-size: 12px;
+  font-size: .75rem;
+  margin-top: 12px;
+  margin-top: .75rem;
+  @include MQ(M) {
+    display: none;
+  }
+  h2 {
+    color: #83b817;
+  }
+}
+#block-views-aktuelles-block-1 .views-field-created span
+{
+
+  font-weight: bold;
+}
+
+#block-views-aktuelles-block-1 div div .views-field-view-node a,
+#block-views-aktuelles-block-1 div div .views-field-nothing span a,
+#block-views-termine-block-2 .views-field-nothing a
+{
+  display: block;
+  font-size: 1px;
+  color: white;
+  text-indent: -9999px;
+  background-image: url('../images/icon_arrow-right.gif');
+  background-repeat: no-repeat;
+  background-position: top left;
+}
+
+.hidden {
+  text-decoration: none;
+  color: black !important;
+  &:hover {
+    color: $color2 !important;
+  }
+}
+
+#block-views-termine-block-2 .views-field-nothing a {
+  background-position: top center;
+}
+
+// FACEBOOK Header
+
+#block-block-15
+{
+  position: absolute !important;
+  bottom: 0px;
+  margin-bottom: 0px !important;
+  right: 15px;
+  @include MQ(M) {
+    display: none;
+  }
+}
+
+// Royal Slider Frontpage
+
+.royalSlider {
+  margin-bottom: 32px;
+  margin-bottom: 2rem;
+  width: 100%;
+  height: 400px!important;
+  @include MQ(XL) {
+    height: 320px!important;
+  }
+  @include MQ(L) {
+    height: 260px!important;
+  }
+  @media only screen and (max-width: 41.875em) { // 670px
+    height: 240px!important;
+  }
+  @media only screen and (max-width: 37.5em) { // 600px
+    height: 200px !important;
+  }
+  @include MQ(S) {
+    height: 100px !important;
+    margin-bottom: 16px;
+    margin-bottom: 1rem;
+  }
+}
+
+.rsDefault .rsBullets {
+  line-height: 24px;
+  line-height: 1.5rem;
+  // background: rgba(131,184,23, 0.75); //#83b817
+  @include MQ(S) {
+    background: transparent;
+  }
+  .rsNavItem {
+    padding-right: 12px;
+  }
+}
+
+#block-block-16 {
+  p {
+    @include adjust-font-size-to(24px);
+    @include MQ(M) {
+      @include adjust-font-size-to(20px);
+    }
+    @include MQ(S) {
+      @include adjust-font-size-to(16px);
+    }
+    text-align: center;
+  }
+  p:first-child {
+    // margin-bottom: 24px!important;
+  }
+}
+
+/* @group Main Navigation / Hauptmenü */
+
+#navigation
+{
+}
+
+.region-navigation .block-menu-block
+{
+  line-height: 5.7em;
+  @include MQ(M) {
+    line-height: 1.5em;
+  }
+  vertical-align: middle!important;
+/*  border-top: 1px solid #b1b3b4;
+  border-bottom: 1px solid #b1b3b4;*/
+/*  margin: 0px 0px;*/  
+  background-image: url('../images/bg_navigation-minus-shop-1200.png');
+  @include MQ(XL) {
+    background-image: url('../images/bg_navigation-minus-shop.png');
+  }
+  background-position: left left;
+  background-repeat: no-repeat;
+  height: 82px;
+  @include MQ(M) {
+    height: auto;
+  }
+/*  width: 931px;*/
+/*  padding-top: 15px;*/
+  
+}
+
+.region-navigation .block-menu-block a:link,
+.region-navigation .block-menu-block a:visited,
+.region-navigation .block-menu-block a:hover,
+.region-navigation .block-menu-block a:active
+
+{
+  text-decoration: none;
+  font-size:1em;
+  font-weight: bold;
+  text-transform: none;
+}
+
+
+
+.region-navigation .block-menu-block ul li a
+{
+/*  margin-top: 10px;*/
+  padding-right: 34px;
+  padding-right: 2.125rem;
+  font-family: Georgia, serif;
+}
+
+.region-navigation .block-menu-block ul li a.active,
+.region-navigation .block-menu-block ul li a.active-trail,
+.region-navigation .block-menu-block ul li a:hover
+
+{
+  color: #83b817;
+}
+
+.region-navigation .block-menu-block ul li.shop a
+
+{
+  font-family: Oswald, sans-serif!important;
+  font-weight: normal;
+  display: block;
+  background-image: url('../images/bg_shop.png');
+  background-position: left top;
+  background-repeat: no-repeat;
+  width: 81px;
+  color: white;
+  text-transform: uppercase;
+/*  letter-spacing: -0.01em;*/
+  padding-left: 0;
+  padding-right: 0!important;
+  
+}
+
+.region-navigation .block-menu-block ul li.shop a:hover {
+  // color: #83b817;
+  background-image: url('../images/bg_shop_active.png');
+}
+
+.region-navigation .block-menu-block ul li.shop.active a {
+  font-family: Oswald, sans-serif!important;
+  font-weight: normal;
+  display: block;
+  background-image: url('../images/bg_shop_active.png');
+  background-position: left top;
+  background-repeat: no-repeat;
+  width: 81px;
+  color: white;
+  text-transform: uppercase;
+  padding-left: 5px;
+  padding-right: 0px!important;
+}
+
+ul.primary, ul.secondary
+{
+  margin: 2em 0 1.5em!important;
+}
+
+
+// Responsive Menu
+
+.responsive-menus.responsified.responsive-toggled span.toggler {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+
+}
+
+.responsive-menus.responsified span.toggler,
+.responsive-menus.responsified .responsive-menus-simple  {
+  background: #83B817;
+  box-shadow: 2px 2px 2px #666666;
+}
+
+.responsive-menus.responsified .responsive-menus-simple {
+  background-color: transparentize(#83B817, .1);
+}
+
+.responsive-menus ul.rm-removed   li a:hover {
+    color: #666666;
+  }
+
+/* @end Main Navigation / Hauptmenü */
+
+
+/* @group Weincharakteristik laden */
+
+#block-block-14
+{
+  margin-top: 60px;
+  margin-top: 3.75rem;
+  background-color: #83b817; /*gree, grün */
+  height: 52px;
+  // margin-right: 5px;
+  @include MQ(M) {
+    margin-top: 24px;
+    margin-top: 1.5rem;
+  }
+}
+
+#block-block-14 div
+{
+  background-image: url('../images/icon_bottle_white.png');
+  background-position: right bottom;
+  background-repeat: no-repeat;
+  height: 52px;
+  padding: 14px 10px 10px 10px;
+  @include MQ(XL) {
+    padding-top: 2px;
+  }
+  @include MQ(M) {
+    // background-image: none;
+    padding-top: 12px;
+    padding-top: .75rem;
+  }
+}
+
+#block-block-14 a
+{
+  color: white;
+  text-decoration: none;
+  font-size: 1em;
+  &:hover {
+    text-decoration: underline;
+  }
+  @include MQ(M) {
+    text-decoration: underline;
+    &:hover {
+      text-decoration: none;
+    }
+  }  
+}
+
+/* @end Weincharakteristik laden */
+
+/* @group article / content */
+
+.sidebar-first #content
+{
+  background-image: url('../images/bg_page-header-1200.gif');
+  @include MQ(XL) {
+    background-image: url('../images/bg_page-header.gif');
+  }
+  @include MQ(L) {
+    background-size: 484px 29px;
+  }
+  @include MQ(M) {
+    background-image: none;
+    // margin-top: 32px;
+    // margin-top: 2rem;
+    border-top: 1px solid #a2a4a5;
+  }
+  background-position: 13px 5px;
+  background-repeat: no-repeat;
+
+}
+
+#content .node-page, /* zB Pressetext, CT Seite */
+h1#page-title
+{
+  margin-top: 46px;
+  margin-top: 2.875rem;
+  padding-bottom: 20px;
+  .front & {
+    margin-top: 0;
+  }
+  @include MQ(M) {
+    margin-top: 16px;
+    margin-top: 1rem;
+  }
+}
+
+
+.front #content .node-page {
+  @include MQ(M) {
+    margin-top: 0;
+  }
+}
+
+#content .node-page .field-name-body
+{
+  font-size: 0.875em;
+  line-height: 1.4em;
+}
+
+/* @end article / content */
+
+/* @group Weine */
+
+/* Blendet den Textteil der Seite aus, über die der Views-Block Weine eingeblendet wird */
+body.page-node-491 .ds-1col,
+body.page-node-492 .ds-1col,
+body.page-node-493 .ds-1col,
+body.page-node-494 .ds-1col,
+body.page-node-643 .ds-1col
+{
+  display: none;
+}
+
+#content .block-views h2 {
+  margin-top: 46px;
+  margin-top: 2.875rem;
+  @include MQ(M) {
+    margin-top: 16px;
+    margin-top: 1rem;
+  }
+}
+
+#content .block-views .views-row-1 h2 {
+  margin-top: 24px;
+  margin-top: 1.5rem;
+}
+
+.view-Wein-Detail
+{
+  margin-left: 20px;
+}
+
+.view-Wein-Detail .field
+{
+  font-size: 0.815em; /* 13 px */
+}
+
+.view-Wein-Detail .views-row
+{
+    border-bottom: 1px solid #b1b3b4;
+    margin-top: 10px;
+    padding-bottom: 15px;
+}
+
+.view-Wein-Detail .views-row-first
+{
+  margin-top: 0px;
+}
+
+.view-Wein-Detail .field-name-title h2
+{
+  margin-top: 0px;
+  margin-bottom: 0px;
+  color: #83b817;
+  font-size: 1.25em;
+  line-height: 1.25em;
+  padding-left: 20px;
+  background: url('../images/icon_info.png') no-repeat left center; 
+}
+
+.view-Wein-Detail .group-left
+{
+  padding-right: 12%;
+  // width: 70%;
+  width: 62%;
+}
+
+.view-Wein-Detail .group-right
+{
+  margin-top: 5px;
+  padding-right: 0;
+  width: 26%;
+  float: right;
+}
+
+.field-name-field-jahrgang
+{
+  float: left;
+}
+
+.field-name-field-jahrgang div
+{
+  margin-right: 3px;
+}
+
+.field-name-field-jahrgang,
+.field-name-field-gebinde,
+.field-name-field-kurzbeschreibung
+{
+  font-weight: bold;
+}
+
+.field-name-field-kurzbeschreibung
+{
+  clear: both;
+  margin-bottom: 20px;
+}
+
+.field-name-field-link-zum-webshop
+{
+  margin-top: 20px;
+}
+
+.field-name-field-link-zum-webshop a
+{
+  color: #83b817; /*green, grün */
+  padding-left: 15px;
+  background-image: url('../images/icon_arrow-right.gif');
+  background-repeat: no-repeat;
+  background-position: top left;
+  
+}
+
+/* @end Weine */
+
+/* @group Bezugsquellen */
+
+/* wenn Bezugsquelle keine Vertriebpartner hat (view empty) Titel ausblenden zB Bezugsquellen Kärnten
+http://www.evernote.com/shard/s4/sh/ae66de41-3006-491f-af45-7ba52e213c41/a15f9e7650d7b83b5d1d1f77cf888214 */
+
+body.page-bezugsquellen div#content h1.title
+{
+/*  font-size: 1px;*/
+  text-indent: -9999px;
+}
+
+/* View empty Text positionieren und stylen */
+
+body.page-bezugsquellen div.view-empty
+{
+  font-size: 0.8em;
+}
+
+.view-bezugsquellen,
+.view-bezugsquellen-gastronomie
+{
+  margin: 46px 0 0 0;
+  margin: 2.875rem 0 0 0;
+  @include MQ(M) {
+    margin-top: 16px;
+    margin-top: 1rem;
+  }
+}
+
+.view-bezugsquellen .views-row,
+.view-bezugsquellen-gastronomie .views-row
+{
+  border-bottom: 1px solid #b1b3b4;
+}
+
+.view-bezugsquellen .views-row .node-bezugsquellen,
+.view-bezugsquellen-gastronomie .views-row .node-bezugsquellen
+{
+  margin-left: 20px;
+}
+
+/* Titel - Firmenanschrift */
+
+.view-bezugsquellen .field-name-title h2,
+.view-bezugsquellen-gastronomie .field-name-title h2
+{
+  font-size: 0.875em;
+  line-height: 1em;
+  margin-top: 21px;
+  margin-bottom: 0px;
+  color: #83b817; /* grün green */
+}
+
+/* Etwas mehr Abstand zw Titel des Restaurants und Ansprechpartner - criscom 03.01.2013 */
+
+.field-name-field-ansprechpartner
+{
+  margin-top: 5px!important;
+}
+
+/* Label */
+.view-bezugsquellen .field .field-label,
+.view-bezugsquellen-gastronomie .field .field-label
+{
+  font-weight: normal;
+}
+
+.view-bezugsquellen .field-name-field-adresse div div p,
+.view-bezugsquellen-gastronomie .field-name-field-adresse div div p
+{
+  font-size: 0.8em;
+  margin-bottom: 0px!important;
+}
+
+.view-bezugsquellen .field-name-field-ansprechpartner,
+.view-bezugsquellen .field-name-field-telefonnummer,
+.view-bezugsquellen .field-name-field-faxnummer,
+.view-bezugsquellen .field-name-field-e-mail,
+.view-bezugsquellen .field-name-field-internet,
+.view-bezugsquellen .view-footer .download-wrapper,
+.view-bezugsquellen-gastronomie .field-name-field-ansprechpartner,
+.view-bezugsquellen-gastronomie .field-name-field-telefonnummer,
+.view-bezugsquellen-gastronomie .field-name-field-faxnummer,
+.view-bezugsquellen-gastronomie .field-name-field-e-mail,
+.view-bezugsquellen-gastronomie .field-name-field-internet,
+.view-bezugsquellen-gastronomie .view-footer .download-wrapper
+
+{
+  font-size: 0.8em;
+}
+
+.view-bezugsquellen .field-name-field-e-mail a,
+.view-bezugsquellen .field-name-field-internet a,
+.view-bezugsquellen-gastronomie .field-name-field-e-mail a,
+.view-bezugsquellen-gastronomie .field-name-field-internet a
+{
+  color: #262626;
+  font-weight: bold;
+  line-height: 0.8em;
+  text-decoration: none;
+}
+
+.view-bezugsquellen .field-name-field-internet,
+.view-bezugsquellen-gastronomie .field-name-field-internet
+{
+  margin-bottom: 21px;
+}
+
+.view-bezugsquellen .field-name-body div div p,
+.view-bezugsquellen-gastronomie .field-name-body div div p
+{
+  font-size: 0.8em;
+  margin-top: 0px!important;
+}
+
+/* Alle Vertriebspartner PDF Download */
+
+.view-bezugsquellen .view-footer .download-wrapper,
+.view-bezugsquellen-gastronomie .view-footer .download-wrapper
+{
+
+  margin-top: 35px;
+  margin-bottom: 21px;
+  
+}
+
+.view-bezugsquellen .view-footer .download-wrapper a,
+.view-bezugsquellen-gastronomie .view-footer .download-wrapper a
+{
+  display: block;
+  padding-left: 25px;
+  line-height: 20px;
+  background: url('../images/icon_download.gif') no-repeat left 0px;
+  color: #262626;
+  font-weight: bold;
+  text-decoration: none!important;
+}
+
+/* @end Bezugsquellen */
+
+/* termine */
+
+.view-termine, #content .view-Aktuelles {
+  padding-top: 46px;
+  padding-top: 2.875rem;
+  @include MQ(M) {
+    padding-top: 16px;
+    padding-top: 1rem;
+  }
+  .group-right {
+  @include MQ(L) {
+    padding-left: 5%;
+    }
+  }
+}
+
+.field-name-field-name-der-veranstaltung {
+  margin-top: 16px;
+  font-weight: 600;
+  color: #83b817; /*green grün */
+}
+
+#content .view-Aktuelles,
+.view-termine { 
+  .views-row {
+  margin-bottom: 20px;
+  padding-bottom: 30px; 
+  border-bottom: 1px solid #b1b3b4;
+  .front & {
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+  }
+  .views-row-last {
+    border: 0;
+  }
+}
+
+/*Datum*/
+.view-termine .field-name-title,
+#content .view-Aktuelles .field-name-title,
+.field-name-post-date
+{
+  color: #83b817; /* green grün */
+  font-size: 1.125em; /* 18px */
+  background: url('../images/icon_bottle_green.gif') no-repeat left top;  
+}
+
+.view-termine .field-name-title div div,
+#content .view-Aktuelles .field-name-title div div,
+.field-name-post-date div div
+{
+  padding-left: 20px;
+  line-height: 3.2em;
+}
+
+.view-termine .field-name-title div div h2,
+#content .view-Aktuelles .field-name-title div div h2,
+.node-story .field-name-title div div h2
+{
+  font-size: 0.875em; /* 14px */
+  margin: 5px 0 0 0;
+  line-height: 1em;
+  padding-left: 20px;
+}
+
+.node-story .field-name-body,
+.node-story .field-name-node-link,
+.node-story .field-name-upload
+{
+  font-size: 0.875em; /* 14 px */
+  padding-left: 20px;
+}
+
+.node-story .field-name-node-link a,
+.node-story .field-name-upload a
+{
+  color: #141215;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.node-story .field-name-body p a
+{
+  padding-right: 15px;
+  background-image: url('../images/icon_arrow-right.gif');
+  background-repeat: no-repeat;
+  background-position: top right;
+  text-decoration: none;
+  color: #262626;
+}
+
+.node-story .field-name-upload
+{
+  margin-top: 20px;
+/*  background: url('../images/icon_download.gif') no-repeat left bottom;*/
+/*  line-height: 2.125em;*/
+}
+
+/* Paginator Article Archive */
+
+ul.pager li {
+  font-size: 0.75em!important;
+}
+
+ul.pager li a {
+  text-decoration: none!important;
+  
+}
+
+// Aktuelles Startseite Mobil
+
+// Show this block only on MQ(M) and below
+#block-views-termine-block-2 {
+  @media only screen and (min-width: 48em + .01) {
+    display: none;
+  }
+  margin-top: 16px;
+  margin-top: 1rem;
+  text-align: center;
+  h2 {
+    color: $color2;
+  }
+  .view {
+    padding-top: 0;
+  }
+}
+
+/* @end News /aktuelles */
+
+/* Newsletter */
+
+  /* @group Mailchimp Newsletter */
+
+#mc_embed_signup input.email {
+  @include MQ(M) {
+    width: 100% !important;
+  }
+}
+
+#mc_embed_signup
+{
+  background: transparent!important;
+}
+
+#mc_embed_signup #introduction
+{
+  margin-right: 25px!important;
+  @include MQ(M) {
+    margin-right: 0!important;
+  }
+}
+
+#mc_embed_signup form
+{
+  padding-top: 20px!important;
+}
+
+.gecko {
+  /* MailChimp Form Embed Code - Slim - 08/17/2011 */
+#mc_embed_signup form {display:block; position:relative; text-align:left; padding:10px 0 10px 3%}
+#mc_embed_signup h2 {font-weight:bold; padding:0; margin:15px 0; font-size:1.4em;}
+#mc_embed_signup input {border:1px solid #999; -webkit-appearance:none;}
+#mc_embed_signup input[type=checkbox]{-webkit-appearance:checkbox;}
+#mc_embed_signup input[type=radio]{-webkit-appearance:radio;}
+#mc_embed_signup input:focus {border-color:#333;}
+#mc_embed_signup .button {clear:both; background-color: #aaa; border: 0 none; border-radius:4px; color: #FFFFFF; cursor: pointer; display: inline-block; font-size:15px; font-weight: bold; height: 32px; line-height: 32px; margin: 0 5px 10px 0; padding:0; text-align: center; text-decoration: none; vertical-align: top; white-space: nowrap; width: auto;}
+#mc_embed_signup .button:hover {background-color:#777;}
+#mc_embed_signup .small-meta {font-size: 11px;}
+#mc_embed_signup .nowrap {white-space:nowrap;}     
+#mc_embed_signup .clear {clear:none; display:inline;}
+
+#mc_embed_signup label {display:block; font-size:16px; padding-bottom:10px; font-weight:bold;}
+#mc_embed_signup input.email {display:block; padding:8px 0; margin:0 4% 10px 0; text-indent:5px; width:58%; min-width:130px;}
+#mc_embed_signup input.button {display:block; width:35%; margin:0 0 10px 0; min-width:90px;}
+
+#mc_embed_signup div#mce-responses {float:left; top:-1.4em; padding:0em .5em 0em .5em; overflow:hidden; width:90%;margin: 0 5%; clear: both;}
+#mc_embed_signup div.response {margin:1em 0; padding:1em .5em .5em 0; font-weight:bold; float:left; top:-1.5em; z-index:1; width:80%;}
+#mc_embed_signup #mce-error-response {display:none;}
+#mc_embed_signup #mce-success-response {color:#529214; display:none;}
+#mc_embed_signup label.error {display:block; float:none; width:auto; margin-left:1.05em; text-align:left; padding:.5em 0;}
+}
+
+  /* @end Mailchimp Newsletter */
+
+
+/* @group Downloads Bereich */
+
+#content .view-mode-downloads_landing_page /* zB Downloads, CT Seite - View Mode Downloads Landing Page */
+{
+  // margin-top: 23px;
+  // margin-top: 1.4375rem;
+}
+
+#content .view-mode-downloads_landing_page .group-left
+{
+  padding-right: 4%;
+  width: 58%;
+  @include MQ(L) {
+    width: 100%;
+  }
+  .lt-ie9 & {
+    width: 100%;
+  }
+}
+
+#content .view-mode-downloads_landing_page .group-right
+{
+  margin-top: 5px;
+  padding-right: 2%;
+  width: 36%;
+  @include MQ(L) {
+    width: 100%;
+  }
+  .lt-ie9 & {
+    width: 100%;
+  }
+}
+
+#content .view-mode-downloads_landing_page .group-right h3
+{
+  font-size: 0.875em;
+  margin-bottom: 0.5em;
+}
+
+.view-downloads table.cols-5,
+.view-downloads table.cols-2
+{
+  margin-top: 0em!important;
+}
+
+.view-downloads table.cols-5 tbody tr
+{
+  border-top: 10px solid white;
+}
+
+.view-downloads table.cols-5 tr.row-first
+{
+  border-top: 0px;
+}
+
+#content .view-mode-downloads_landing_page .views-field-field-datei-upload div div a
+{
+  display: block;
+  font-size: 1px;
+  color: white;
+  text-indent: -9999px; /* hiding "word" downloads" */
+  background: url('../images/icon_download.gif') no-repeat center center;
+  width: 50px;
+}
+
+.field-name-download-beschreibung
+{
+  font-size: 0.75em;
+}
+
+/* Thumbnails */
+#content .view-mode-downloads_landing_page .views-field-field-bild-upload div a img
+{
+  margin-right: 5px;
+/*  text-align: center;*/
+}
+
+/* Download Icon */
+#content .view-mode-downloads_landing_page .field-name-upload div div div img
+{
+  margin-right: 5px;
+}
+
+/* Download Pressemappe */
+
+#content .view-mode-downloads_landing_page .field-name-upload div div div a
+{
+  font-size: 0.875em;
+  color: #141215;
+  font-weight: bold!important;
+  text-decoration: none;
+  line-height: 2em;
+}
+
+
+/* @end download / content */
+
+
+/* @group Kontakt */
+
+body.page-contact h1.title {
+  // display: none;
+}
+
+#block-block-9 .vcard
+{
+  // margin-top: 46px;
+  // margin-top: 2.875rem;
+  margin-top: 0;
+  font-size: 0.875em;
+  border-bottom: 1px solid #b1b3b4;
+  @include MQ(M) {
+    // margin-top: 16px;
+    // margin-top: 1rem;
+    margin-top: 0;
+    padding-bottom: 16px;
+    padding-bottom: 1rem;
+  }
+}
+
+#contact-address p
+{
+  margin-left: 20px;
+}
+
+
+#block-block-9>p
+{
+  margin-left: 20px;
+  margin-left: 1.2rem;
+  @include MQ(M) {
+    margin-left: 0;
+  }
+  font-size: 0.875em;
+}
+
+form.contact-form
+{
+  font-size: 0.875em;
+  margin-left: 20px;
+  margin-left: 1.2rem;
+  @include MQ(M) {
+    margin-bottom: 16px;
+    margin-bottom: 1rem;
+    margin-left: 0;
+  }
+}
+
+body.node-type-kontakt .node-kontakt
+{
+  margin-top: 46px;
+  margin-top: 2.875rem;
+  @include MQ(M) {
+    margin-top: 16px;
+    margin-top: 1rem;
+  }
+}
+
+body.node-type-kontakt .field-name-body p,
+body.node-type-kontakt .field-name-field-google-maps
+{
+  font-size: 0.875em;
+}
+
+body.node-type-kontakt .field-name-body p:first-child
+{
+  // margin-top: 0px;
+}
+
+.node-kontakt .group-left
+{
+  width: 80%;
+  padding-right: 5%;
+}
+
+.node-kontakt .group-right
+
+{
+  width: 20%;
+}
+
+/* @end Kontakt */
+
+
+/* @group footer */
+/* Trennstrich über dem Footer */
+/* footer boder color: ##b1b3b4; */
+#footer
+{
+  font-size: 0.875em;
+  padding: 0px 10px 5px 10px;
+  // @include MQ(M) {
+    margin-top: 12px;
+    margin-top: .75rem;
+    border-top: 1px solid #b1b3b4;
+  // }
+} 
+
+/* Flaschen Icon */
+
+.region-footer .block.first
+{
+  background: url('../images/icon_bottle.gif') no-repeat left top;
+  padding-left: 38px;
+}
+
+.region-footer .block.first p
+{
+  line-height: 2.2em;
+  color: black;
+}
+
+.region-footer a:link,
+.region-footer a:visited,
+.region-footer a:hover,
+.region-footer a:active
+{
+  color: black!important;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.region-footer a:hover {
+  text-decoration: underline;
+}
+
+.region-footer a.google-maps {
+  text-decoration: underline;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+/* @end footer */
+
+
+// Internet Explorer 8 - IE 8 
+
+
+  .lt-ie9 .sidebar-first {
+    /* Span 2 columns, starting in 2nd column from left. */
+    /* Span 1 column, starting in 1st column from left. */
+  }
+  .lt-ie9 .sidebar-first #content {
+    float: left;
+    width: 66.66667%;
+    margin-left: 33.33333%;
+    margin-right: -100%;
+  }
+  .lt-ie9 .sidebar-first .region-sidebar-first {
+    float: left;
+    width: 33.33333%;
+    margin-left: 0%;
+    margin-right: -33.33333%;
+  }

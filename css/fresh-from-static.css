@@ -1,0 +1,153 @@
+/* Stylesheet für potzinger.at 2012 - Design ulla klopf.design, CSS criscom */
+/* Started: 07.08.2012 */  
+/* www.potzinger.at */
+
+
+
+
+/*h1, h2, h3, p, div
+{
+	color: #1a171b;
+}*/
+
+
+#page
+{
+	background-color: white;
+}
+
+
+/* Überschrift "Natur Wein Gut" Startseite ausblenden */
+
+body.page-node-392 #content h1.title
+{
+	font-size: 1px;
+	text-indent: -9999px;
+}
+
+/* Bilder auf Startseite mittig stellen */
+body.page-node-392 .field-name-body div div p
+{
+	text-align: center;
+	margin-top: 0;
+}
+
+
+
+/* @end startseite */
+
+
+
+/* @group Sidebar */
+
+.region-sidebar-first
+{
+/*	padding-left: 5px!important;*/
+
+}
+
+.region-sidebar-first .block
+{
+	padding-right: 5px;
+}
+
+.region-sidebar-first .block h2.block-title
+{
+	font-family: Georgia, serif;
+}
+
+.region-sidebar-first .block h2.block-title
+
+{
+
+	padding-left: 5px;
+	background-color: #cde3a2;
+	margin-top: 4px;
+	height: 29px;
+	font-size: 1.5em;
+	line-height: 1.35em;
+	color: #707173;
+	border-bottom: 1px solid #b1b3b4;
+}
+
+/* @end Sidebar */
+
+
+
+
+
+/* @group News / aktuelles */
+
+.node-story .group-left,
+.views-row .node-story .group-left
+{
+	width: 205px!important;
+	margin: 0px 10px 30px 0;
+}
+
+.node-story .group-right,
+.views-row .node-story .group-right
+{
+	width: 485px!important;
+	margin: 0px 0px 30px 0px;	
+}
+
+.node-story .group-left,
+.node-story .group-right,
+.views-row-1 .node-story .group-left,
+.views-row-1 .node-story .group-right
+{
+
+	margin: 30px 0px;
+}
+
+.node-story .group-footer
+{
+	border-top: 1px solid #b1b3b4;
+}
+
+
+
+
+
+
+
+
+
+/* @end article / content ---------------------- */
+
+
+
+/* @group admin section */
+body.section-admin h1.title
+{
+	margin-top: 25px;
+}
+
+
+body.section-admin table.sticky-enabled tbody tr td
+{
+	font-weight: bold;
+}
+
+body.section-admin table.sticky-enabled tbody tr td small
+{
+	font-weight: normal;
+}
+
+body.section-admin table.sticky-enabled tbody tr td a,
+body.section-admin table.sticky-enabled div.description /* Inhaltstypen Übersicht - Inhaltytyp hinzfügen - Beschreibung */
+{
+	font-size: 0.875em!important;
+	font-weight: normal;
+}
+
+form.node-bezugsquellen-form.ds-form .group-left,
+form.node-bezugsquellen-form.ds-form .group-right
+{
+	width: 50%!important;
+}
+
+/* @end admin section -----------------------*/
+
+

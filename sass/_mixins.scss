@@ -1,0 +1,197 @@
+// @file
+// Custom sass mixins
+//
+// Define the custom mixins for your project here.
+// http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#defining_a_mixin
+
+// Makes an element visually hidden, but accessible.
+// @see http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+
+
+// =============================================================================
+// 20140203 - CSS rules in mixins from SASS and COMPASS in ACTION p38
+// =============================================================================
+
+// No pullets in lists
+
+// Apply below mixin to ul elements
+// ul.plain {@include no-bullets;}
+@mixin no-bullets {
+  list-style: none;
+  li {
+    list-style-image: none;
+    list-style-type: none;
+    margin-left: 0;
+  }
+}
+
+// Link colors
+
+// Apply below mixin to a elements
+// a {@include link-colors(blue, red, green, white);}
+// a {@include link-colors($normal: blue, $hover: red, $visited: green, $active: white);}
+@mixin link-colors (
+  $normal, 
+  $hover: $normal, 
+  $visited: $normal, 
+  $active: $normal
+  ) {
+  color: $normal;
+  &:hover {color: $hover;}
+  &:visited {color: $visited;}
+  &:active {color: $active;}
+}
+
+// List styles
+// -------------------------------------------------------
+
+// Mixins for list style types
+@mixin unordered {
+   list-style-position: outside; 
+   list-style-type: disc;
+}
+
+@mixin unordered-inside {
+   list-style-position: inside; 
+   list-style-type: disc;
+}
+
+@mixin ordered {
+  list-style-position: outside; 
+  list-style-type: decimal;
+}
+
+@mixin ordered-inside {
+  list-style-position: inside; 
+  list-style-type: decimal;
+}
+
+@mixin nobullet {
+  list-style-type: none;
+}
+
+// =============================================================================
+// Criscom's sass mixins - started: 20131104
+// =============================================================================
+
+// Hiding text mixins
+// =============================================================================
+@mixin hide-text { // as of 04.03.2013 recommended approach to hide text and display an image. taken from: https://github.com/h5bp/html5-boilerplate/commit/aa0396eae757c9e03dda4e463fb0d4db5a5f82d7
+  border: 0; 
+  font: 0/0 a; 
+  text-shadow: none; 
+  color: transparent; 
+  background-color: transparent;
+}
+
+@mixin hide-text-standard { // hide text and display image instead. taken from: http://sachagreif.com/useful-sass-mixins/
+    overflow:hidden;
+    text-indent:-9999px;
+    display:block;
+}
+
+
+// Pixel fallback FUNCTION for font-size REM
+// source:
+// http://www.stubbornella.org/content/2013/07/01/easy-peasy-rem-conversion-with-sass
+// =============================================================================
+@function calculateRem($size) {
+  $remSize: $size / 16px;
+  @return #{$remSize}rem;
+}
+
+@mixin font-size($size) {
+  font-size: $size; //Fallback in px
+  font-size: calculateRem($size);
+}
+
+// Now your mixin is ready to be used! To use it, simply include the mixin wherever you need to declare a font-size.
+
+// Sass:
+
+// h1 {
+//   @include fontSize(32px);
+// }
+// Output:
+
+// h1 {
+//   font-size: 32px;
+//   font-size: 2rem;
+// }
+
+// Mixin for box-sizing (taken from Sass and Compass for Webdesigners _mixins.scss)
+// ====================================================================
+
+@mixin bs($bs-type: $defined-bs-type) {
+  -webkit-box-sizing: $bs-type;
+  -moz-box-sizing: $bs-type;
+  box-sizing: $bs-type;
+}
+
+// Media queries mixin - taken from SACFD p 152
+// =============================================================================
+
+@mixin MQ($canvas) {
+  @if $canvas == S {
+    @media only screen and (max-width: $S) { // < 480
+      @content;
+    }
+  }
+
+  @else if $canvas == M {
+    @media only screen and (max-width: $M) { // < 768
+      @content;
+    }
+  }
+
+  @else if $canvas == L { // < 960
+    @media only screen and (max-width: $L) {
+      @content; 
+    }
+  }
+  @else if $canvas == XL { // < 1200
+    @media only screen and (max-width: $XL) {
+      @content; 
+    }
+  }
+  @else if $canvas == XXL { // > 1200
+    @media only screen and (min-width: $XL + .01) {
+      @content; 
+    }
+  }
+}
+
+// ====================================================================
+// Mixin provided by ZEN Theme
+// ====================================================================
+
+
+@mixin element-invisible {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  @if $legacy-support-for-ie6 or $legacy-support-for-ie7 {
+    clip: rect(1px 1px 1px 1px); // IE6 and IE7 use the wrong syntax.
+  }
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+// Turns off the element-invisible effect.
+@mixin element-invisible-off {
+  position: static !important;
+  clip: auto;
+  height: auto;
+  width: auto;
+  overflow: auto;
+}
+
+// Makes an element visually hidden by default, but visible when focused.
+@mixin element-focusable {
+  @include element-invisible;
+
+  &:active,
+  &:focus {
+    @include element-invisible-off;
+  }
+}

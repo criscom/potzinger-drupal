@@ -1,0 +1,121 @@
+/**
+ * @file
+ * EINSTERN specific additions to the _init.scss file
+ *
+ * This file is reusable. Copy paste it into other projects and add
+ * @import "einstern" to the _init.scss file of the project
+ *
+ * Import additional mixins, variables
+ * @import "einstern";
+ */
+
+  /*! © EINSTERN Internet Services 2014 www.einstern.at / MASTER INSTALL / SASS used */
+
+ // criscom: Variable from SAFCD _layout.scss line 22
+$border-box-sizing: true;
+
+// criscom: Mixin variables ==> from SACFD _variables.scss line 20
+$defined-bs-type: border-box !default;
+
+$experimental-support-for-microsoft : true !default;
+
+
+// PATH TO CSS3 PIE
+// ====================================================================
+
+$path-to-pie: url('/sites/all/libraries/PIE/PIE.php');
+
+// Default values for text-shadow mixin ==> taken from SACFD _variables.scss line 29ff
+// ====================================================================
+
+$default-text-shadow-color: darken(black,20%);
+$default-text-shadow-blur: 0px;
+$default-text-shadow-v-offset: 1px;
+$default-text-shadow-h-offset: 1px;
+
+// Importing %placeholders
+@import "placeholders";
+
+ /* Import Fonts */
+// @import "fonts";
+
+/* General CSS styles */
+
+* {
+  @include bs;
+  outline: none;
+}
+
+body {
+  @include establish-baseline;
+}
+
+::-moz-selection {
+  background-color: transparentize($color1, 0.5);
+  text-shadow: none;
+}
+
+::selection {
+  background-color: transparentize($color1, 0.5);
+  text-shadow: none;
+}
+
+// hide Site name and Site slogan
+.header__site-link,
+.header__site-slogan {
+  @include hide-text;
+}
+
+input, select, img {
+  max-width: 100%;
+  height: auto;
+}
+
+iframe {
+  max-width: 100%;
+}
+
+
+.block {
+  margin-bottom: 0 !important;
+}
+
+// Remove the default left and right padding
+#header, 
+#content, 
+#navigation, 
+.region-sidebar-first, 
+.region-sidebar-second, 
+#footer {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+
+/* Horizontally centering the menu in #navigation */
+// https://drupal.org/node/2014165 
+
+// #navigation {
+//   text-align: center;
+// }
+
+// ul.menu li {
+//   display: inline-block;
+//   float: none;
+// }
+
+// make fields_slideshow responsive
+// .field-slideshow-slide, 
+// .field-slideshow-slide a, 
+// .field-slideshow-slide img, 
+// .field-slideshow-pager  {
+//   width: 100% !important;
+// }
+
+
+// Warnings
+
+div.messages--warning.messages.warning,
+.error, .messages--error {
+  background-repeat: no-repeat;
+}
