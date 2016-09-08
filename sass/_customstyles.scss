@@ -310,6 +310,7 @@ div.download-file {
 }
 
 .rsDefault .rsBullets {
+  display: none; // POTZ-36 Potzinger.at: Slider 20160908
   line-height: 24px;
   line-height: 1.5rem;
   // background: rgba(131,184,23, 0.75); //#83b817
