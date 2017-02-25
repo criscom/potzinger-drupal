@@ -1063,7 +1063,8 @@ ul.pager li a {
   border-top: 0px;
 }
 
-#content .view-mode-downloads_landing_page .views-field-field-datei-upload div div a
+#content .view-mode-downloads_landing_page .views-field-field-datei-upload div div a,
+.view-mode-downloads_landing_page .views-field-field-datei-upload a
 {
   display: block;
   font-size: 1px;
@@ -1071,6 +1072,10 @@ ul.pager li a {
   text-indent: -9999px; /* hiding "word" downloads" */
   background: url('../images/icon_download.gif') no-repeat center center;
   width: 50px;
+}
+
+.file-icon {
+  display: none;
 }
 
 .field-name-download-beschreibung
